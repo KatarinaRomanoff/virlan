@@ -1,0 +1,240 @@
+<main class="flex flex-col">
+  <!-- Hero -->
+  <section class="flex flex-col items-center gap-10 px-6 py-12 sm:px-10 lg:flex-row lg:px-20 lg:py-16">
+    <div class="flex w-full flex-col items-start gap-6 lg:max-w-[515px]">
+      <div class="flex flex-col items-start gap-6 sm:gap-8">
+        <span class="text-sm font-semibold uppercase tracking-[0.04em] text-accent">
+          Portfolio Artystyczne
+        </span>
+        <h1 class="font-serif text-[56px] leading-[0.9] text-white sm:text-[72px] lg:text-[84px]">
+          ION VIRLAN
+        </h1>
+        <p class="font-serif text-2xl leading-[1.2] text-muted sm:text-[32px]">
+          Kontrabasista Jazzowy &amp; Kompozytor
+        </p>
+      </div>
+      <p class="text-sm leading-[1.6] text-muted">
+        Muzyk o mołdawskich korzeniach, łączący wschodnioeuropejski folk z nowoczesnym jazzem. Na
+        scenie i w studiu działa we Wrocławiu, gdzie tworzy muzykę czerpiącą z tradycji bałkańskiej
+        i zachodniej improwizacji.
+      </p>
+      <a
+        href="mailto:virionut&#64;gmail.com"
+        class="inline-flex items-start rounded bg-accent px-6 py-3.5 text-sm font-semibold text-ink transition-opacity hover:opacity-90"
+      >
+        Kontakt: virionut&#64;gmail.com
+      </a>
+    </div>
+    <div class="flex w-full justify-end lg:max-w-[733px]">
+      <img
+        src="https://api.builder.io/api/v1/image/assets/TEMP/b7acd7bdabc27ec5c459542feec7b08346fc0f7d?width=1466"
+        alt="Ion Virlan"
+        class="h-[320px] w-full rounded-[30px] object-cover sm:h-[420px] lg:h-[520px]"
+      />
+    </div>
+  </section>
+
+  <!-- Artist profile -->
+  <section
+    id="profil-artysty"
+    class="anchor-offset relative isolate overflow-hidden border-y border-line"
+  >
+    <img
+      src="https://api.builder.io/api/v1/image/assets/TEMP/bbccc5192fbea66279590b798c06e26704b94479?width=2880"
+      alt=""
+      class="absolute inset-0 -z-10 h-full w-full object-cover"
+    />
+    <div class="flex flex-col gap-10 px-6 py-10 sm:px-10 lg:flex-row lg:gap-16 lg:px-20 lg:py-12">
+      <div class="flex flex-col items-start gap-4 lg:max-w-[405px]">
+        <div class="flex items-center gap-2">
+          <span class="h-3 w-3 rounded-full bg-accent"></span>
+          <span class="text-xs font-semibold uppercase tracking-[0.03em] text-accent">
+            Profil Artysty
+          </span>
+        </div>
+        <h2 class="font-serif text-[36px] leading-[1.05] text-white sm:text-[44px]">
+          Profil Artysty
+        </h2>
+        <p class="text-sm leading-[1.6] text-offwhite">
+          Basista, kontrabasista jazzowy, kompozytor i aranżer pochodzący z Kiszyniowa
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-x-6 gap-y-5 sm:grid-cols-2 lg:flex-1">
+        @for (item of profileItems; track item.label) {
+          <div class="flex flex-col gap-3 border-b border-white/80 pb-5">
+            <span class="text-[11px] font-semibold uppercase tracking-[0.04em] text-offwhite">
+              {{ item.label }}
+            </span>
+            <span class="font-serif text-2xl leading-tight text-white sm:text-[28px]">
+              {{ item.value }}
+            </span>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Flagship project -->
+  <section id="kwintet" class="anchor-offset flex flex-col items-center gap-10 px-6 py-12 sm:px-10 lg:flex-row-reverse lg:gap-16 lg:px-20 lg:py-16">
+    <div class="relative isolate w-full overflow-hidden rounded-[30px] border border-line lg:max-w-[733px]">
+      <img
+        src="https://api.builder.io/api/v1/image/assets/TEMP/edbd1a8eaddff2062d75d3c49cb236c77dd1765e?width=1466"
+        alt=""
+        class="absolute inset-0 -z-10 h-full w-full object-cover"
+      />
+      <div class="flex flex-col gap-6 px-6 py-8 sm:px-11 sm:py-10">
+        @for (item of flagshipItems; track item.title) {
+          <div class="flex flex-col items-start gap-1.5">
+            <span class="text-base font-semibold text-white">{{ item.title }}</span>
+            <p class="text-[13px] leading-[1.5] text-offwhite">{{ item.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="flex w-full flex-col items-start gap-4 lg:max-w-[515px]">
+      <div class="flex items-center gap-2">
+        <span class="h-3 w-3 rounded-full bg-accent"></span>
+        <span class="text-sm font-semibold uppercase tracking-[0.03em] text-accent">
+          Projekt Flagowy
+        </span>
+      </div>
+      <h2 class="font-serif text-[36px] leading-[1.05] text-white sm:text-[48px]">
+        Ion Virlan Quintet
+      </h2>
+      <p class="text-[15px] leading-[1.6] text-offwhite">
+        Ion Virlan Quintet to autorska formacja powolana do zycia w 2024 roku w ramach
+        prestiżowego stypendium Gaude Polonia.
+      </p>
+      <div class="h-px w-full bg-white"></div>
+      <span class="font-serif text-4xl text-accent">2024</span>
+    </div>
+  </section>
+
+  <!-- Education & achievements -->
+  <section class="flex flex-col gap-10 border-y border-line bg-panel/90 bg-gradient-to-r from-white/[0.04] to-white/[0.01] px-6 py-12 sm:px-10 lg:flex-row lg:gap-6 lg:px-20 lg:py-12">
+    <div id="edukacja" class="anchor-offset flex w-full flex-col items-start gap-6 lg:max-w-[624px]">
+      <div class="flex flex-col items-start gap-3">
+        <div class="flex items-center gap-2">
+          <span class="h-3 w-3 rounded-full bg-accent"></span>
+          <span class="text-xs font-semibold uppercase tracking-[0.03em] text-accent">
+            edukacja
+          </span>
+        </div>
+        <h2 class="font-serif text-[36px] leading-[1.05] text-white sm:text-[44px]">Edukacja</h2>
+      </div>
+
+      <div class="flex flex-col items-start gap-5">
+        @for (item of educationItems; track item.school) {
+          <div class="flex flex-col items-start gap-2">
+            <span class="font-serif text-2xl text-accent sm:text-[28px]">{{ item.school }}</span>
+            @if (item.degree) {
+              <span class="text-base text-white">{{ item.degree }}</span>
+            }
+            <span class="text-sm text-offwhite">{{ item.major }}</span>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div id="osiagniecia" class="anchor-offset relative isolate w-full overflow-hidden rounded-[30px] border border-line lg:max-w-[655px]">
+      <img
+        src="https://api.builder.io/api/v1/image/assets/TEMP/cee7dff0c1d63edaea4a3f74a597d4b6864fba4d?width=1310"
+        alt=""
+        class="absolute inset-0 -z-10 h-full w-full object-cover"
+      />
+      <div class="flex flex-col gap-6 px-6 py-8 sm:px-11 sm:py-10">
+        <div class="flex flex-col items-start gap-3">
+          <div class="flex items-center gap-2">
+            <span class="h-3 w-3 rounded-full bg-accent"></span>
+            <span class="text-xs font-semibold uppercase tracking-[0.03em] text-accent">
+              Stypendia &amp; Osiągnięcia
+            </span>
+          </div>
+          <h2 class="font-serif text-[32px] leading-[1.05] text-white sm:text-[44px]">
+            PROGRAMY STYPENDIALNE &amp; OSIĄGNIĘCIA
+          </h2>
+        </div>
+        <p class="text-sm leading-[1.6] text-offwhite">
+          Dwukrotny stypendysta programu Ministra Kultury i Dziedzictwa Narodowego Gaude Polonia
+          (edycje 2021 i 2024).
+        </p>
+        <div class="flex flex-col items-start gap-4">
+          @for (item of scholarships; track item.year) {
+            <div class="flex items-start gap-3">
+              <span class="font-serif text-xl text-accent">{{ item.year }}</span>
+              <div class="flex flex-1 flex-col items-start gap-1">
+                <span class="text-base font-semibold text-white">{{ item.title }}</span>
+                <p class="text-[13px] leading-[1.5] text-offwhite">{{ item.description }}</p>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collaborations -->
+  <section
+    id="wspolpraca"
+    class="anchor-offset flex flex-col items-start gap-8 bg-[#0d0d0d]/88 bg-gradient-to-r from-white/[0.04] to-white/[0.01] px-6 py-12 sm:px-10 lg:px-20"
+  >
+    <div class="flex flex-col items-start gap-3">
+      <div class="flex items-center gap-2">
+        <span class="h-3 w-3 rounded-full bg-accent"></span>
+        <span class="text-xs font-semibold uppercase tracking-[0.03em] text-accent">
+          współprace &amp; festiwale
+        </span>
+      </div>
+      <h2 class="font-serif text-[36px] leading-[1.05] text-white sm:text-[44px]">
+        Współprace i festiwale
+      </h2>
+    </div>
+    <img
+      src="https://api.builder.io/api/v1/image/assets/TEMP/e606402d5702595591bb85dcc0d36ace48bf6efb?width=2560"
+      alt="Współprace i festiwale"
+      class="w-full rounded-2xl"
+    />
+  </section>
+
+  <!-- Media -->
+  <section class="flex flex-col items-start gap-8 bg-[#0d0d0d]/88 bg-gradient-to-r from-white/[0.04] to-white/[0.01] px-6 py-12 sm:px-10 lg:px-20">
+    <div class="flex flex-col items-start gap-3">
+      <div class="flex items-center gap-2">
+        <span class="h-3 w-3 rounded-full bg-accent"></span>
+        <span class="text-xs font-semibold uppercase tracking-[0.03em] text-accent">
+          media &amp; nagrania
+        </span>
+      </div>
+      <h2 class="font-serif text-[36px] leading-[1.05] text-white sm:text-[44px]">
+        Media &amp; Nagrania
+      </h2>
+    </div>
+
+    <div class="flex w-full flex-col">
+      @for (item of mediaItems; track item.title; let last = $last) {
+        <div class="flex flex-col items-start justify-between gap-3 py-4 sm:flex-row sm:items-center">
+          <div class="flex flex-1 flex-col items-start gap-1.5">
+            <span class="font-serif text-xl leading-none text-white sm:text-2xl">{{ item.title }}</span>
+            <span class="text-[13px] leading-[1.5] text-offwhite">{{ item.subtitle }}</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M3.51204 2.66554C3.39453 2.8686 3.33269 3.09905 3.33276 3.33364V12.6664C3.33269 12.9009 3.39453 13.1314 3.51204 13.3345C3.62955 13.5375 3.79856 13.706 4.00201 13.8228C4.20547 13.9397 4.43615 14.0008 4.67079 14C4.90542 13.9992 5.13569 13.9365 5.33834 13.8183L13.3393 9.15192C13.541 9.03446 13.7083 8.86614 13.8245 8.66378C13.9407 8.46142 14.0018 8.2321 14.0016 7.99876C14.0014 7.76541 13.9399 7.53621 13.8233 7.33405C13.7068 7.13189 13.5392 6.96385 13.3373 6.84674L5.33834 2.18172C5.13569 2.06348 4.90542 2.0008 4.67079 2.00001C4.43615 1.99921 4.20547 2.06033 4.00201 2.17718C3.79856 2.29404 3.62955 2.46249 3.51204 2.66554Z"
+                stroke="#E5A93B"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+            <span class="text-xs font-semibold uppercase tracking-[0.03em] text-accent">YouTube</span>
+          </div>
+        </div>
+        @if (!last) {
+          <div class="h-px w-full bg-line"></div>
+        }
+      }
+    </div>
+  </section>
+</main>
