@@ -36,7 +36,7 @@
 
   <!-- Artist profile -->
   <section
-    id="profil-artysty"
+    id="profile"
     class="anchor-offset relative isolate overflow-hidden border-y border-line"
   >
     <img
@@ -76,7 +76,7 @@
   </section>
 
   <!-- Flagship project -->
-  <section id="kwintet" class="anchor-offset flex flex-col items-center gap-10 px-6 py-12 sm:px-10 lg:flex-row-reverse lg:gap-16 lg:px-20 lg:py-16">
+  <section id="band" class="anchor-offset flex flex-col items-center gap-10 px-6 py-12 sm:px-10 lg:flex-row-reverse lg:gap-16 lg:px-20 lg:py-16">
     <div class="relative isolate w-full overflow-hidden rounded-[30px] border border-line lg:max-w-[733px]">
       <img
         src="https://api.builder.io/api/v1/image/assets/TEMP/edbd1a8eaddff2062d75d3c49cb236c77dd1765e?width=1466"
@@ -114,7 +114,7 @@
 
   <!-- Education & achievements -->
   <section class="flex flex-col gap-10 border-y border-line bg-panel/90 bg-gradient-to-r from-white/[0.04] to-white/[0.01] px-6 py-12 sm:px-10 lg:flex-row lg:gap-6 lg:px-20 lg:py-12">
-    <div id="edukacja" class="anchor-offset flex w-full flex-col items-start gap-6 lg:max-w-[624px]">
+    <div id="education" class="anchor-offset flex w-full flex-col items-start gap-6 lg:max-w-[624px]">
       <div class="flex flex-col items-start gap-3">
         <div class="flex items-center gap-2">
           <span class="h-3 w-3 rounded-full bg-accent"></span>
@@ -138,7 +138,7 @@
       </div>
     </div>
 
-    <div id="osiagniecia" class="anchor-offset relative isolate w-full overflow-hidden rounded-[30px] border border-line lg:max-w-[655px]">
+    <div id="achievements" class="anchor-offset relative isolate w-full overflow-hidden rounded-[30px] border border-line lg:max-w-[655px]">
       <img
         src="https://api.builder.io/api/v1/image/assets/TEMP/cee7dff0c1d63edaea4a3f74a597d4b6864fba4d?width=1310"
         alt=""
@@ -177,7 +177,7 @@
 
   <!-- Collaborations -->
   <section
-    id="wspolpraca"
+    id="collab"
     class="anchor-offset flex flex-col items-start gap-8 bg-[#0d0d0d]/88 bg-gradient-to-r from-white/[0.04] to-white/[0.01] px-6 py-12 sm:px-10 lg:px-20"
   >
     <div class="flex flex-col items-start gap-3">
@@ -199,7 +199,7 @@
   </section>
 
   <!-- Media -->
-  <section class="flex flex-col items-start gap-8 bg-[#0d0d0d]/88 bg-gradient-to-r from-white/[0.04] to-white/[0.01] px-6 py-12 sm:px-10 lg:px-20">
+  <section id="media" class="flex flex-col items-start gap-8 bg-[#0d0d0d]/88 bg-gradient-to-r from-white/[0.04] to-white/[0.01] px-6 py-12 sm:px-10 lg:px-20">
     <div class="flex flex-col items-start gap-3">
       <div class="flex items-center gap-2">
         <span class="h-3 w-3 rounded-full bg-accent"></span>
@@ -228,7 +228,7 @@
                 stroke-linecap="round"
               />
             </svg>
-            <span class="text-xs font-semibold uppercase tracking-[0.03em] text-accent">YouTube</span>
+            <a class="text-xs font-semibold uppercase tracking-[0.03em] text-accent" target="_blank" [href]="item.link">YouTube</a>
           </div>
         </div>
         @if (!last) {

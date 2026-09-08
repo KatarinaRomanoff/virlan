@@ -25,6 +25,7 @@ interface Scholarship {
 interface MediaItem {
   title: string;
   subtitle: string;
+  link: string;
 }
 
 @Component({
@@ -100,23 +101,27 @@ export class HomeComponent {
   ];
 
   protected readonly mediaItems: MediaItem[] = [
-    { title: 'Gaude - Album', subtitle: 'YouTube playlist link' },
+    { title: 'Gaude - Album', subtitle: 'YouTube playlist link' , link:"https://www.youtube.com/playlist?list=OLAK5uy_lI_ZeBjj8DM8YO-xSKe6P7XJ0OxvJcGjI"},
     {
       title:
         'Canta Cucul Live - Ion Virlan Quintet, Vertigo Summer Jazz Festival',
       subtitle: 'Ion Virlan Quintet Live from Vertigo Summer Jazz Festival',
+      link:'https://www.youtube.com/watch?v=4XcdvlnEyv0'
     },
     {
       title: 'Piotr Szlempo Quintet - live: highlight (Nysa)',
       subtitle: 'YouTube video',
+      link: 'https://www.youtube.com/watch?v=xQCoOyMVW6Q'
     },
     {
       title: 'Jos de Vâlcea într-un sat - Ion Virlan',
       subtitle: 'Ion Virlan - YouTube video',
+      link:'https://www.youtube.com/watch?v=EBMQUqg4z3o'
     },
     {
       title: 'Blue in Green — Ion Virlan, contrabas',
       subtitle: 'YouTube video',
+      link: 'https://www.youtube.com/watch?v=WG8DRMViq-U'
     },
   ];
 }

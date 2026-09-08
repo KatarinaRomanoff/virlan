@@ -7,11 +7,12 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
   protected readonly links = [
-    { label: 'Profile', href: '#profil-artysty', muted: false },
-    { label: 'Kwintet Iona Virlana', href: '#kwintet', muted: true },
-    { label: 'Edukacja', href: '#edukacja', muted: true },
-    { label: 'Osiągnięcia', href: '#osiagniecia', muted: true },
-    { label: 'Współpraca', href: '#wspolpraca', muted: true },
+    { label: 'Profile', href: '#profile', muted: false },
+    { label: 'Kwintet Iona Virlana', href: '#band', muted: true },
+    { label: 'Edukacja', href: '#education', muted: true },
+    { label: 'Osigniecia', href: '#achievements', muted: true },
+    { label: 'Współpraca', href: '#colabortion', muted: true },
+    { label: 'Media', href: '#media', muted: true },
   ];
 
   protected menuOpen = false;
