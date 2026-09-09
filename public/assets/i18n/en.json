@@ -1,0 +1,143 @@
+{
+  "navbar": {
+    "label": "Profile",
+    "band": "Ion Virlan Quintet",
+    "education": "Education",
+    "achievements": "Achievements",
+    "colaboration": "Collaboration",
+    "media": "Media"
+  },
+  "hero": {
+    "label": "Artistic Portfolio",
+    "title": "ION VIRLAN",
+    "subtitle": "Jazz Double Bassist & Composer",
+    "description": "A musician of Moldovan origins connecting Eastern European folk with modern jazz. Active on stage and in the studio in Wrocław, he creates music drawing on Balkan traditions and Western improvisation.",
+    "contact": "Contact: virionut@gmail.com"
+  },
+  "profile": {
+    "label": "Artist Profile",
+    "title": "Artist Profile",
+    "description": "Bassist, jazz double bassist, composer and arranger originally from Chișinău",
+    "items": {
+      "instruments": {
+        "label": "Main Instruments",
+        "value": "Double bass, bass guitar"
+      },
+      "directions": {
+        "label": "Creative Directions",
+        "value": "Contemporary jazz, composition, folk-jazz arrangement"
+      },
+      "flagship": {
+        "label": "Flagship Project",
+        "value": "Ion Virlan Quintet (Leader, composer, arranger)"
+      },
+      "born": {
+        "label": "Born",
+        "value": "1990, Moldova"
+      },
+      "base": {
+        "label": "Current Artistic Base",
+        "value": "Wrocław, Poland"
+      },
+      "activity": {
+        "label": "Concert Activity",
+        "value": "Since 2010"
+      }
+    }
+  },
+  "flagship": {
+    "label": "Flagship Project",
+    "title": "Ion Virlan Quintet",
+    "description": "Ion Virlan Quintet is an original ensemble established in 2024 as part of the prestigious Gaude Polonia scholarship.",
+    "year": "2024",
+    "items": {
+      "fusion": {
+        "title": "Cultural Fusion",
+        "description": "A combination of deep Balkan folk tradition sensitivity with modern European jazz language."
+      },
+      "composition": {
+        "title": "Original Composition",
+        "description": "The ensemble's repertoire is based exclusively on Ion's original compositions and his innovative arrangements of traditional folk songs."
+      },
+      "album": {
+        "title": "Album",
+        "description": "The main goal of creating the quintet was to produce and record an album that transforms traditional folk themes into vital, energetic contemporary jazz pieces."
+      }
+    }
+  },
+  "education": {
+    "label": "Education",
+    "title": "Education",
+    "items": {
+      "wroclaw": {
+        "school": "Academy of Music in Wrocław",
+        "degree": "Master of Arts (Jazz Double Bass)",
+        "major": "Specialty: Jazz Double Bass"
+      },
+      "bucharest": {
+        "school": "Academy of Music in Bucharest",
+        "degree": "Bachelor (Classical Double Bass)",
+        "major": "Specialty: Classical Double Bass"
+      },
+      "chisinau": {
+        "school": "Music School in Chișinău",
+        "degree": "",
+        "major": "Classical and Theoretical Foundations"
+      }
+    }
+  },
+  "achievements": {
+    "label": "Scholarships & Achievements",
+    "title": "SCHOLARSHIP PROGRAMS & ACHIEVEMENTS",
+    "description": "Double scholarship recipient of the Minister of Culture and National Heritage's Gaude Polonia program (editions 2021 and 2024).",
+    "items": {
+      "scholarship2021": {
+        "title": "Scholarship 2021",
+        "description": "Development of first original jazz arrangements for traditional Moldovan folk music."
+      },
+      "scholarship2024": {
+        "title": "Scholarship 2024",
+        "description": "Completion of work on the original album of the Ion Virlan Quintet ensemble."
+      }
+    }
+  },
+  "collaboration": {
+    "label": "collaborations & festivals",
+    "title": "Collaborations and Festivals",
+    "festivals": "Festivals",
+    "collaborations": "Key Collaborations"
+  },
+  "media": {
+    "label": "media & recordings",
+    "title": "Media & Recordings",
+    "youtube": "YouTube",
+    "items": {
+      "gaudeAlbum": {
+        "title": "Gaude - Album",
+        "subtitle": "YouTube playlist link"
+      },
+      "cantaCucul": {
+        "title": "Canta Cucul Live - Ion Virlan Quintet, Vertigo Summer Jazz Festival",
+        "subtitle": "Ion Virlan Quintet Live from Vertigo Summer Jazz Festival"
+      },
+      "szlempo": {
+        "title": "Piotr Szlempo Quintet - live: highlight (Nysa)",
+        "subtitle": "YouTube video"
+      },
+      "vosValcea": {
+        "title": "Jos de Vâlcea într-un sat - Ion Virlan",
+        "subtitle": "Ion Virlan - YouTube video"
+      },
+      "blueGreen": {
+        "title": "Blue in Green — Ion Virlan, contrabas",
+        "subtitle": "YouTube video"
+      }
+    }
+  },
+  "footer": {
+    "title": "ION VIRLAN",
+    "subtitle": "Jazz Double Bassist & Composer | Portfolio",
+    "location": "Wrocław, Poland",
+    "email": "virionut@gmail.com"
+  }
+}

@@ -1,0 +1,17 @@
+<div class="flex items-center gap-2">
+  @for (lang of availableLangs; track lang) {
+    <button
+      (click)="changeLanguage(lang)"
+      [class]="activeLang === lang
+        ? 'text-accent font-bold'
+        : 'text-white hover:text-accent'"
+      class="text-sm font-medium transition-colors cursor-pointer"
+      [attr.aria-label]="'Switch to ' + lang.toUpperCase()"
+    >
+      {{ lang | uppercase }}
+    </button>
+    @if (!$last) {
+      <span class="text-white/30">|</span>
+    }
+  }
+</div>

@@ -1,53 +1,60 @@
-<header
-  class="sticky top-0 z-50 flex items-center justify-between gap-4 border-b border-line bg-[#0d0d0d]/85 bg-gradient-to-r from-white/[0.04] to-white/[0.01] px-6 py-4 sm:px-10 lg:px-20"
->
-  <div class="flex items-center gap-2">
-    <span class="font-serif text-2xl leading-none text-white sm:text-[28px]">ION VIRLAN</span>
-  </div>
+<nav class="fixed top-0 z-50 w-full bg-dark/95 backdrop-blur-sm border-b border-line">
+    <div class="flex items-center justify-between px-6 py-4 sm:px-10 lg:px-20" >
+      <ng-container *transloco="let t">
+      <a href="#" class="text-xl font-bold text-white">
+        {{ t('navbar.band') }}
+      </a>
+      </ng-container>
 
-  <nav class="hidden items-center gap-8 lg:flex">
-    @for (link of links; track link.href) {
-      <a
-        [href]="link.href"
-        class="text-sm transition-colors hover:text-accent"
-        [class.text-white]="!link.muted"
-        [class.text-muted]="link.muted"
-        >{{ link.label }}</a
+      <!-- Mobile menu button -->
+      <button
+        (click)="toggleMenu()"
+        class="lg:hidden flex flex-col gap-1.5 p-2"
+        aria-label="Toggle menu"
       >
-    }
-  </nav>
+        <span class="block w-6 h-0.5 bg-white transition-all duration-300" [class.rotate-45]="menuOpen" [class.translate-y-1.5]="menuOpen"></span>
+        <span class="block w-6 h-0.5 bg-white transition-all duration-300" [class.opacity-0]="menuOpen"></span>
+        <span class="block w-6 h-0.5 bg-white transition-all duration-300" [class.-rotate-45]="menuOpen" [class.-translate-y-1.5]="menuOpen"></span>
+      </button>
 
-  <button
-    type="button"
-    class="flex h-9 w-9 items-center justify-center rounded-md border border-line text-white lg:hidden"
-    (click)="toggleMenu()"
-    aria-label="Toggle menu"
-  >
+      <!-- Desktop menu -->
+      <div class="hidden lg:flex items-center gap-6">
+        <ng-container *transloco="let t">
+        @for (link of links; track link.key) {
+          <a
+            [href]="link.href"
+            (click)="closeMenu()"
+            class="text-sm font-semibold hover:text-accent transition-colors"
+            [class.text-muted]="link.muted"
+            [class.text-white]="!link.muted"
+          >
+            {{ t('navbar.' + link.key) }}
+          </a>
+        }
+        </ng-container>
+        <app-language-switcher></app-language-switcher>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
     @if (menuOpen) {
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M18 6 6 18M6 6l12 12" stroke-linecap="round" />
-      </svg>
-    } @else {
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round" />
-      </svg>
+      <div class="lg:hidden px-6 py-4 bg-dark/95 backdrop-blur-sm border-t border-line">
+        <ng-container *transloco="let t">
+        @for (link of links; track link.key) {
+          <a
+            [href]="link.href"
+            (click)="closeMenu()"
+            class="block py-3 text-sm font-semibold hover:text-accent transition-colors"
+            [class.text-muted]="link.muted"
+            [class.text-white]="!link.muted"
+          >
+            {{ t('navbar.' + link.key) }}
+          </a>
+        }
+        </ng-container>
+        <div class="flex items-center gap-2 pt-4 border-t border-line">
+          <app-language-switcher></app-language-switcher>
+        </div>
+      </div>
     }
-  </button>
-
-  @if (menuOpen) {
-    <nav
-      class="absolute left-0 top-full flex w-full flex-col gap-4 border-b border-line bg-[#0d0d0d] px-6 py-6 lg:hidden"
-    >
-      @for (link of links; track link.href) {
-        <a
-          [href]="link.href"
-          class="text-sm transition-colors hover:text-accent"
-          [class.text-white]="!link.muted"
-          [class.text-muted]="link.muted"
-          (click)="closeMenu()"
-          >{{ link.label }}</a
-        >
-      }
-    </nav>
-  }
-</header>
+</nav>

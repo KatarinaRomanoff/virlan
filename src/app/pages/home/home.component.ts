@@ -1,127 +1,45 @@
 import { Component } from '@angular/core';
-
-interface ProfileItem {
-  label: string;
-  value: string;
-}
-
-interface FlagshipItem {
-  title: string;
-  description: string;
-}
-
-interface EducationItem {
-  school: string;
-  degree: string;
-  major: string;
-}
-
-interface Scholarship {
-  year: string;
-  title: string;
-  description: string;
-}
-
-interface MediaItem {
-  title: string;
-  subtitle: string;
-  link: string;
-}
+import { TranslocoDirective } from '@jsverse/transloco';
+import { ProfileItem, FlagshipItem, EducationItem, Scholarship, MediaItem } from './models/home.models';
 
 @Component({
   selector: 'app-home',
   standalone: true,
+  imports: [TranslocoDirective],
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
-  protected readonly profileItems: ProfileItem[] = [
-    { label: 'Główne Instrumenty', value: 'Kontrabas, gitara basowa' },
-    {
-      label: 'kierunki twórcze',
-      value: 'Współczesny jazz, kompozycja, folk-jazz aranżacja',
-    },
-    {
-      label: 'Projekt flagowy',
-      value: 'Ion Virlan Quintet (Lider, kompozytor, aranżer)',
-    },
-    { label: 'Urodzony', value: '1990 r., Mołdawia' },
-    { label: 'OBECNA BAZA ARTYSTYCZNA', value: 'Wrocław, Polska' },
-    { label: 'AKTYWNOŚĆ KONCERTOWA', value: 'Od 2010' },
+  readonly profileItems: ProfileItem[] = [
+    { label: 'profile.items.instruments.label', value: 'profile.items.instruments.value' },
+    { label: 'profile.items.directions.label', value: 'profile.items.directions.value' },
+    { label: 'profile.items.flagship.label', value: 'profile.items.flagship.value' },
+    { label: 'profile.items.born.label', value: 'profile.items.born.value' },
+    { label: 'profile.items.base.label', value: 'profile.items.base.value' },
+    { label: 'profile.items.activity.label', value: 'profile.items.activity.value' },
   ];
 
-  protected readonly flagshipItems: FlagshipItem[] = [
-    {
-      title: 'Fuzja Kulturowa',
-      description:
-        'Połączenie głębokiej wrażliwości balkanskiej tradycji ludowej z nowoczesnym jezykiem europejskiego jazzu.',
-    },
-    {
-      title: 'Orginalna Komozycja',
-      description:
-        'Repertuar zespołu opiera się wyłącznie na autorskich kompozycjach Iona oraz jego nowatorskich aranżacjach tradycyjnych pieśni folklorystycznych.',
-    },
-    {
-      title: 'Album',
-      description:
-        'Głównym celem powołania kwintetu było stworzenie i zarejestrowanie albumu, który przekształca tradycyjne tematy witalne w pełne energii, współczesne utwory jazzowe.',
-    },
+  readonly flagshipItems: FlagshipItem[] = [
+    { title: 'flagship.items.fusion.title', description: 'flagship.items.fusion.description' },
+    { title: 'flagship.items.composition.title', description: 'flagship.items.composition.description' },
+    { title: 'flagship.items.album.title', description: 'flagship.items.album.description' },
   ];
 
-  protected readonly educationItems: EducationItem[] = [
-    {
-      school: 'Akademia Muzyczna we Wrocławiu',
-      degree: 'Magister Sztuki (Kontrabas Jazzowy)',
-      major: 'Specjalność: Kontrabas Jazzowy',
-    },
-    {
-      school: 'Akademia Muzyczna w Bukareszcie',
-      degree: 'Licencjat (Kontrabas Klasyczny)',
-      major: 'Specjalność: Kontrabas Klasyczny',
-    },
-    {
-      school: 'Szkoła Muzyczna w Kiszyniowie',
-      degree: '',
-      major: 'Podstawy Klasyczne i Teoretyczne',
-    },
+  readonly educationItems: EducationItem[] = [
+    { school: 'education.items.wroclaw.school', degree: 'education.items.wroclaw.degree', major: 'education.items.wroclaw.major' },
+    { school: 'education.items.bucharest.school', degree: 'education.items.bucharest.degree', major: 'education.items.bucharest.major' },
+    { school: 'education.items.chisinau.school', degree: 'education.items.chisinau.degree', major: 'education.items.chisinau.major' },
   ];
 
-  protected readonly scholarships: Scholarship[] = [
-    {
-      year: '2021',
-      title: 'Stypendium 2021',
-      description:
-        'Opracowanie pierwszych autorskich aranżacji jazzowych dla tradycyjnej moldawskiej muzyki ludowej.',
-    },
-    {
-      year: '2024',
-      title: 'Stypendium 2024',
-      description:
-        'Sfinalizowanie prac nad autorskim albumem formacji Ion Virlan Quintet.',
-    },
+  readonly scholarships: Scholarship[] = [
+    { year: '2021', title: 'achievements.items.scholarship2021.title', description: 'achievements.items.scholarship2021.description' },
+    { year: '2024', title: 'achievements.items.scholarship2024.title', description: 'achievements.items.scholarship2024.description' },
   ];
 
-  protected readonly mediaItems: MediaItem[] = [
-    { title: 'Gaude - Album', subtitle: 'YouTube playlist link' , link:"https://www.youtube.com/playlist?list=OLAK5uy_lI_ZeBjj8DM8YO-xSKe6P7XJ0OxvJcGjI"},
-    {
-      title:
-        'Canta Cucul Live - Ion Virlan Quintet, Vertigo Summer Jazz Festival',
-      subtitle: 'Ion Virlan Quintet Live from Vertigo Summer Jazz Festival',
-      link:'https://www.youtube.com/watch?v=4XcdvlnEyv0'
-    },
-    {
-      title: 'Piotr Szlempo Quintet - live: highlight (Nysa)',
-      subtitle: 'YouTube video',
-      link: 'https://www.youtube.com/watch?v=xQCoOyMVW6Q'
-    },
-    {
-      title: 'Jos de Vâlcea într-un sat - Ion Virlan',
-      subtitle: 'Ion Virlan - YouTube video',
-      link:'https://www.youtube.com/watch?v=EBMQUqg4z3o'
-    },
-    {
-      title: 'Blue in Green — Ion Virlan, contrabas',
-      subtitle: 'YouTube video',
-      link: 'https://www.youtube.com/watch?v=WG8DRMViq-U'
-    },
+  readonly mediaItems: MediaItem[] = [
+    { title: 'media.items.gaudeAlbum.title', subtitle: 'media.items.gaudeAlbum.subtitle', link: "https://www.youtube.com/playlist?list=OLAK5uy_lI_ZeBjj8DM8YO-xSKe6P7XJ0OxvJcGjI" },
+    { title: 'media.items.cantaCucul.title', subtitle: 'media.items.cantaCucul.subtitle', link: 'https://www.youtube.com/watch?v=4XcdvlnEyv0' },
+    { title: 'media.items.szlempo.title', subtitle: 'media.items.szlempo.subtitle', link: 'https://www.youtube.com/watch?v=xQCoOyMVW6Q' },
+    { title: 'media.items.vosValcea.title', subtitle: 'media.items.vosValcea.subtitle', link: 'https://www.youtube.com/watch?v=EBMQUqg4z3o' },
+    { title: 'media.items.blueGreen.title', subtitle: 'media.items.blueGreen.subtitle', link: 'https://www.youtube.com/watch?v=WG8DRMViq-U' },
   ];
 }

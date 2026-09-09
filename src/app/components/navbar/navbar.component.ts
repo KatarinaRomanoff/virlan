@@ -1,21 +1,25 @@
 import { Component } from '@angular/core';
+import { TranslocoDirective } from '@jsverse/transloco';
+import { NavbarLink } from './models/navbar.models';
+import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
+  imports: [TranslocoDirective, LanguageSwitcherComponent],
   templateUrl: './navbar.component.html',
 })
 export class NavbarComponent {
-  protected readonly links = [
-    { label: 'Profile', href: '#profile', muted: false },
-    { label: 'Kwintet Iona Virlana', href: '#band', muted: true },
-    { label: 'Edukacja', href: '#education', muted: true },
-    { label: 'Osigniecia', href: '#achievements', muted: true },
-    { label: 'Współpraca', href: '#colabortion', muted: true },
-    { label: 'Media', href: '#media', muted: true },
-  ];
+  menuOpen = false;
 
-  protected menuOpen = false;
+  readonly links: NavbarLink[] = [
+    { key: 'label', href: '#profile', muted: false },
+    { key: 'band', href: '#band', muted: true },
+    { key: 'education', href: '#education', muted: true },
+    { key: 'achievements', href: '#achievements', muted: true },
+    { key: 'colaboration', href: '#collaboration', muted: true },
+    { key: 'media', href: '#media', muted: true },
+  ];
 
   toggleMenu(): void {
     this.menuOpen = !this.menuOpen;

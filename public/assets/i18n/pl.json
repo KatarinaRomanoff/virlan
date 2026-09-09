@@ -1,0 +1,143 @@
+{
+  "navbar": {
+    "label": "Profil",
+    "band": "Kwintet Iona Virlana",
+    "education": "Edukacja",
+    "achievements": "Osiągnięcia",
+    "colaboration": "Współpraca",
+    "media": "Media"
+  },
+  "hero": {
+    "label": "Portfolio Artystyczne",
+    "title": "ION VIRLAN",
+    "subtitle": "Kontrabasista Jazzowy & Kompozytor",
+    "description": "Muzyk o mołdawskich korzeniach, łączący wschodnioeuropejski folk z nowoczesnym jazzem. Na scenie i w studiu działa we Wrocławiu, gdzie tworzy muzykę czerpiącą z tradycji bałkańskiej i zachodniej improwizacji.",
+    "contact": "Kontakt: virionut@gmail.com"
+  },
+  "profile": {
+    "label": "Profil Artysty",
+    "title": "Profil Artysty",
+    "description": "Basista, kontrabasista jazzowy, kompozytor i aranżer pochodzący z Kiszyniowa",
+    "items": {
+      "instruments": {
+        "label": "Główne Instrumenty",
+        "value": "Kontrabas, gitara basowa"
+      },
+      "directions": {
+        "label": "Kierunki twórcze",
+        "value": "Współczesny jazz, kompozycja, folk-jazz aranżacja"
+      },
+      "flagship": {
+        "label": "Projekt flagowy",
+        "value": "Ion Virlan Quintet (Lider, kompozytor, aranżer)"
+      },
+      "born": {
+        "label": "Urodzony",
+        "value": "1990 r., Mołdawia"
+      },
+      "base": {
+        "label": "OBECNA BAZA ARTYSTYCZNA",
+        "value": "Wrocław, Polska"
+      },
+      "activity": {
+        "label": "AKTYWNOŚĆ KONCERTOWA",
+        "value": "Od 2010"
+      }
+    }
+  },
+  "flagship": {
+    "label": "Projekt Flagowy",
+    "title": "Ion Virlan Quintet",
+    "description": "Ion Virlan Quintet to autorska formacja powołana do życia w 2024 roku w ramach prestiżowego stypendium Gaude Polonia.",
+    "year": "2024",
+    "items": {
+      "fusion": {
+        "title": "Fuzja Kulturowa",
+        "description": "Połączenie głębokiej wrażliwości balkanskiej tradycji ludowej z nowoczesnym językiem europejskiego jazzu."
+      },
+      "composition": {
+        "title": "Orginalna Kompozycja",
+        "description": "Repertuar zespołu opiera się wyłącznie na autorskich kompozycjach Iona oraz jego nowatorskich aranżacjach tradycyjnych pieśni folklorystycznych."
+      },
+      "album": {
+        "title": "Album",
+        "description": "Głównym celem powołania kwintetu było stworzenie i zarejestrowanie albumu, który przekształca tradycyjne tematy witalne w pełne energii, współczesne utwory jazzowe."
+      }
+    }
+  },
+  "education": {
+    "label": "edukacja",
+    "title": "Edukacja",
+    "items": {
+      "wroclaw": {
+        "school": "Akademia Muzyczna we Wrocławiu",
+        "degree": "Magister Sztuki (Kontrabas Jazzowy)",
+        "major": "Specjalność: Kontrabas Jazzowy"
+      },
+      "bucharest": {
+        "school": "Akademia Muzyczna w Bukareszcie",
+        "degree": "Licencjat (Kontrabas Klasyczny)",
+        "major": "Specjalność: Kontrabas Klasyczny"
+      },
+      "chisinau": {
+        "school": "Szkoła Muzyczna w Kiszyniowie",
+        "degree": "",
+        "major": "Podstawy Klasyczne i Teoretyczne"
+      }
+    }
+  },
+  "achievements": {
+    "label": "Stypendia & Osiągnięcia",
+    "title": "PROGRAMY STYPENDIALNE & OSIĄGNIĘCIA",
+    "description": "Dwukrotny stypendysta programu Ministra Kultury i Dziedzictwa Narodowego Gaude Polonia (edycje 2021 i 2024).",
+    "items": {
+      "scholarship2021": {
+        "title": "Stypendium 2021",
+        "description": "Opracowanie pierwszych autorskich aranżacji jazzowych dla tradycyjnej moldawskiej muzyki ludowej."
+      },
+      "scholarship2024": {
+        "title": "Stypendium 2024",
+        "description": "Sfinalizowanie prac nad autorskim albumem formacji Ion Virlan Quintet."
+      }
+    }
+  },
+  "collaboration": {
+    "label": "współprace i festiwale",
+    "title": "Współprace i festiwale",
+    "festivals": "Festiwale",
+    "collaborations": "Kluczowe współprace"
+  },
+  "media": {
+    "label": "media & nagrania",
+    "title": "Media & Nagrania",
+    "youtube": "YouTube",
+    "items": {
+      "gaudeAlbum": {
+        "title": "Gaude - Album",
+        "subtitle": "YouTube playlist link"
+      },
+      "cantaCucul": {
+        "title": "Canta Cucul Live - Ion Virlan Quintet, Vertigo Summer Jazz Festival",
+        "subtitle": "Ion Virlan Quintet Live from Vertigo Summer Jazz Festival"
+      },
+      "szlempo": {
+        "title": "Piotr Szlempo Quintet - live: highlight (Nysa)",
+        "subtitle": "YouTube video"
+      },
+      "vosValcea": {
+        "title": "Jos de Vâlcea într-un sat - Ion Virlan",
+        "subtitle": "Ion Virlan - YouTube video"
+      },
+      "blueGreen": {
+        "title": "Blue in Green — Ion Virlan, contrabas",
+        "subtitle": "YouTube video"
+      }
+    }
+  },
+  "footer": {
+    "title": "ION VIRLAN",
+    "subtitle": "Kontrabasista Jazzowy & Kompozytor | Portfolio",
+    "location": "Wrocław, Poland",
+    "email": "virionut@gmail.com"
+  }
+}
