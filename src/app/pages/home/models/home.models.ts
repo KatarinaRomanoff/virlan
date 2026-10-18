@@ -23,5 +23,12 @@ export interface Scholarship {
 export interface MediaItem {
   title: string;
   subtitle: string;
-  link: string;
+  youtubeId: string;
+  type: MediaType;
+  customThumbnail?: string;
+}
+
+export enum MediaType {
+  Video = 'video',
+  Playlist = 'playlist'
 }

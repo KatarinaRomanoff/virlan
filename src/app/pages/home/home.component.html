@@ -1,5 +1,6 @@
 <main class="flex flex-col">
   <ng-container *transloco="let t">
+
     <!-- Hero -->
     <section class="flex flex-col items-center gap-10 px-6 py-12 sm:px-10 lg:flex-row lg:px-20 lg:py-16">
       <div class="flex w-full flex-col items-start gap-6 lg:max-w-[515px]">
@@ -36,14 +37,17 @@
     <!-- Artist profile -->
     <section
       id="profile"
-      class="anchor-offset relative isolate overflow-hidden border-y border-white/10"
+      class="anchor-offset relative isolate overflow-hidden border-y border-line"
     >
       <img
         src="https://api.builder.io/api/v1/image/assets/TEMP/bbccc5192fbea66279590b798c06e26704b94479?width=2880"
         alt=""
         class="absolute inset-0 -z-10 h-full w-full object-cover"
       />
-      <div class="backdrop-blur-md bg-ink/20 flex flex-col gap-10 px-6 py-10 sm:px-10 lg:flex-row lg:gap-16 lg:px-20 lg:py-12">
+      <!-- Glass overlay pane -->
+      <div class="absolute inset-0 -z-10 bg-ink/60 backdrop-blur-md"></div>
+
+      <div class="flex flex-col gap-10 px-6 py-10 sm:px-10 lg:flex-row lg:gap-16 lg:px-20 lg:py-12">
         <div class="flex flex-col items-start gap-4 lg:max-w-[405px]">
           <div class="flex items-center gap-2">
             <span class="h-3 w-3 rounded-full bg-accent"></span>
@@ -76,13 +80,14 @@
 
     <!-- Flagship project -->
     <section id="band" class="anchor-offset flex flex-col items-center gap-10 px-6 py-12 sm:px-10 lg:flex-row-reverse lg:gap-16 lg:px-20 lg:py-16">
-      <div class="relative isolate w-full overflow-hidden rounded-[30px] border border-white/10 lg:max-w-[733px]">
+      <div class="relative isolate w-full overflow-hidden rounded-[30px] border border-white/20 lg:max-w-[733px]">
         <img
           src="https://api.builder.io/api/v1/image/assets/TEMP/edbd1a8eaddff2062d75d3c49cb236c77dd1765e?width=1466"
           alt=""
           class="absolute inset-0 -z-10 h-full w-full object-cover"
         />
-        <div class="backdrop-blur-md bg-ink/20 flex flex-col gap-6 px-6 py-8 sm:px-11 sm:py-10">
+        <!-- Inner glass pane applied directly to content wrapper -->
+        <div class="flex h-full flex-col gap-6 bg-ink/30 px-6 py-8 backdrop-blur-md ring-1 ring-inset ring-white/10 sm:px-11 sm:py-10">
           @for (item of flagshipItems; track item.title) {
             <div class="flex flex-col items-start gap-1.5">
               <span class="text-base font-semibold text-white">{{ t(item.title) }}</span>
@@ -136,13 +141,14 @@
         </div>
       </div>
 
-      <div id="achievements" class="anchor-offset relative isolate w-full overflow-hidden rounded-[30px] border border-white/10 lg:max-w-[655px]">
+      <div id="achievements" class="anchor-offset relative isolate w-full overflow-hidden rounded-[30px] border border-white/20 lg:max-w-[655px]">
         <img
           src="https://api.builder.io/api/v1/image/assets/TEMP/cee7dff0c1d63edaea4a3f74a597d4b6864fba4d?width=1310"
           alt=""
           class="absolute inset-0 -z-10 h-full w-full object-cover"
         />
-        <div class="backdrop-blur-md bg-ink/20 flex flex-col gap-6 px-6 py-8 sm:px-11 sm:py-10">
+        <!-- Inner glass pane applied directly to content wrapper -->
+        <div class="flex h-full flex-col gap-6 bg-ink/30 px-6 py-8 backdrop-blur-md ring-1 ring-inset ring-white/10 sm:px-11 sm:py-10">
           <div class="flex flex-col items-start gap-3">
             <div class="flex items-center gap-2">
               <span class="h-3 w-3 rounded-full bg-accent"></span>
@@ -188,106 +194,73 @@
           {{ t('collaboration.title') }}
         </h2>
       </div>
-      <div class="self-stretch flex-col-reverse lg:flex-row inline-flex justify-start items-center gap-6">
-      <div class="w-full lg:w-auto">
-        <!-- Photo stage -->
-        <img
-          src="/assets/images/stage-performance-photo.png?width=250"
-          [alt]="t('collaboration.title')"
-          class="w-full h-auto object-cover rounded-2xl"
-        />
-      </div>
-        <div class="lg:w-[624px] w-full inline-flex flex-col justify-start items-start gap-6">
-          <div class="self-stretch inline-flex flex-col justify-start items-start gap-3">
+
+      <div class="self-stretch flex flex-col-reverse lg:flex-row justify-start lg:items-center gap-8 w-full">
+        <div class="w-full lg:w-[624px] flex flex-col justify-start items-start gap-6">
+          <div class="self-stretch flex flex-col justify-start items-start gap-3">
             <div class="justify-start text-accent text-sm font-semibold uppercase tracking-wide">{{ t('collaboration.collaborations') }}</div>
-            <div class="self-stretch inline-flex justify-start items-start gap-2 flex-wrap content-start">
-              <div class="h-8 rounded-[30px] flex justify-center items-center overflow-hidden">
-                <div class="self-stretch px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-start items-start">
-                  <div class="justify-start text-white text-xs font-normal ">Leszek Możdżer</div>
-                </div>
+            <div class="self-stretch flex justify-start items-start gap-2 flex-wrap content-start">
+              <div class="px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-center items-center">
+                <span class="text-white text-xs font-normal">Leszek Możdżer</span>
               </div>
-              <div class="h-8 rounded-[30px] flex justify-center items-center overflow-hidden">
-                <div class="self-stretch px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-start items-start">
-                  <div class="justify-start text-white text-xs font-normal ">Piotr Wojtasik</div>
-                </div>
+              <div class="px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-center items-center">
+                <span class="text-white text-xs font-normal">Piotr Wojtasik</span>
               </div>
-              <div class="h-8 rounded-[30px] flex justify-center items-center overflow-hidden">
-                <div class="self-stretch px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-start items-start">
-                  <div class="justify-start text-white text-xs font-normal ">Arek Skolik</div>
-                </div>
+              <div class="px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-center items-center">
+                <span class="text-white text-xs font-normal">Arek Skolik</span>
               </div>
-              <div class="h-8 rounded-[30px] flex justify-center items-center overflow-hidden">
-                <div class="self-stretch px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-start items-start">
-                  <div class="justify-start text-white text-xs font-normal ">Nicolas Simion</div>
-                </div>
+              <div class="px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-center items-center">
+                <span class="text-white text-xs font-normal">Nicolas Simion</span>
               </div>
-              <div class="h-8 rounded-[30px] flex justify-center items-center overflow-hidden">
-                <div class="self-stretch px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-start items-start">
-                  <div class="justify-start text-white text-xs font-normal ">Sorin Zlat</div>
-                </div>
+              <div class="px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-center items-center">
+                <span class="text-white text-xs font-normal">Sorin Zlat</span>
               </div>
-              <div class="h-8 rounded-[30px] flex justify-center items-center overflow-hidden">
-                <div class="self-stretch px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-start items-start">
-                  <div class="justify-start text-white text-xs font-normal ">Alex Arcus Trio</div>
-                </div>
+              <div class="px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-center items-center">
+                <span class="text-white text-xs font-normal">Alex Arcus Trio</span>
               </div>
-              <div class="h-8 rounded-[30px] flex justify-center items-center overflow-hidden">
-                <div class="self-stretch px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-start items-start">
-                  <div class="justify-start text-white text-xs font-normal ">Bucharest Jazz Orchestra</div>
-                </div>
-              </div>
-              <div class="h-8 rounded-[30px] flex justify-center items-center overflow-hidden">
-                <div class="self-stretch p-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-start items-center">
-                  <div class="justify-start text-white text-xs font-normal ">Leszek Możdżer</div>
-                </div>
+              <div class="px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-center items-center">
+                <span class="text-white text-xs font-normal">Bucharest Jazz Orchestra</span>
               </div>
             </div>
           </div>
-          <div class="self-stretch inline-flex flex-col justify-start items-start gap-3">
+          <div class="self-stretch flex flex-col justify-start items-start gap-3">
             <div class="justify-start text-accent text-sm font-semibold uppercase tracking-wide">{{ t('collaboration.festivals') }}</div>
-            <div class="self-stretch inline-flex justify-start items-start gap-2 flex-wrap content-start">
-              <div class="h-8 rounded-[30px] flex justify-center items-center overflow-hidden">
-                <div class="self-stretch px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-start items-start">
-                  <div class="justify-start text-white text-xs font-normal ">Vertigo Summer Jazz Festival</div>
-                </div>
+            <div class="self-stretch flex justify-start items-start gap-2 flex-wrap content-start">
+              <div class="px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-center items-center">
+                <span class="text-white text-xs font-normal">Vertigo Summer Jazz Festival</span>
               </div>
-              <div class="h-8 rounded-[30px] flex justify-center items-center overflow-hidden">
-                <div class="self-stretch px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-start items-start">
-                  <div class="justify-start text-white text-xs font-normal ">Baku Jazz Festival</div>
-                </div>
+              <div class="px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-center items-center">
+                <span class="text-white text-xs font-normal">Baku Jazz Festival</span>
               </div>
-              <div class="h-8 rounded-[30px] flex justify-center items-center overflow-hidden">
-                <div class="self-stretch px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-start items-start">
-                  <div class="justify-start text-white text-xs font-normal ">Bucharest Jazz Festival</div>
-                </div>
+              <div class="px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-center items-center">
+                <span class="text-white text-xs font-normal">Bucharest Jazz Festival</span>
               </div>
-              <div class="h-8 rounded-[30px] flex justify-center items-center overflow-hidden">
-                <div class="self-stretch px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-start items-start">
-                  <div class="justify-start text-white text-xs font-normal ">Jazz in the Park</div>
-                </div>
+              <div class="px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-center items-center">
+                <span class="text-white text-xs font-normal">Jazz in the Park</span>
               </div>
-              <div class="h-8 rounded-[30px] flex justify-center items-center overflow-hidden">
-                <div class="self-stretch px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-start items-start">
-                  <div class="justify-start text-white text-xs font-normal ">Cluj Jazz Festival</div>
-                </div>
+              <div class="px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-center items-center">
+                <span class="text-white text-xs font-normal">Cluj Jazz Festival</span>
               </div>
-              <div class="h-8 rounded-[30px] flex justify-center items-center overflow-hidden">
-                <div class="self-stretch px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-start items-start">
-                  <div class="justify-start text-white text-xs font-normal ">Ploiești Jazz Festival</div>
-                </div>
+              <div class="px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-center items-center">
+                <span class="text-white text-xs font-normal">Ploiești Jazz Festival</span>
               </div>
-              <div class="h-8 rounded-[30px] flex justify-center items-center overflow-hidden">
-                <div class="self-stretch px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-start items-start">
-                  <div class="justify-start text-white text-xs font-normal ">Sibiu Jazz Festival</div>
-                </div>
+              <div class="px-4 py-2 bg-neutral-800 rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-700 flex justify-center items-center">
+                <span class="text-white text-xs font-normal">Sibiu Jazz Festival</span>
               </div>
             </div>
           </div>
         </div>
+        <div class="w-full lg:w-auto">
+          <img
+            src="/assets/images/stage-performance-photo.png?width=250"
+            [alt]="t('collaboration.title')"
+            class="w-full h-auto object-cover rounded-2xl"
+          />
+        </div>
       </div>
     </section>
 
-    <!-- Media -->
+    <!-- Media Section with Signals & Enums -->
     <section id="media" class="flex flex-col items-start gap-8 bg-[#0d0d0d]/88 bg-gradient-to-r from-white/[0.04] to-white/[0.01] px-6 py-12 sm:px-10 lg:px-20">
       <div class="flex flex-col items-start gap-3">
         <div class="flex items-center gap-2">
@@ -302,23 +275,33 @@
       </div>
 
       <div class="flex w-full flex-col">
-        @for (item of mediaItems; track item.title; let last = $last) {
-          <div class="flex flex-col items-start justify-between gap-3 py-4 sm:flex-row sm:items-center">
-            <div class="flex flex-1 flex-col items-start gap-1.5">
+        <!-- Loop using signal -->
+        @for (item of mediaItems(); track item.title; let last = $last) {
+          <div class="flex flex-col items-start gap-4 py-4 sm:flex-row sm:items-center">
+
+            <button
+              (click)="openVideo(item)"
+              class="group relative h-16 w-28 shrink-0 overflow-hidden rounded-md border border-line bg-panel transition-all hover:border-accent focus:outline-none focus:ring-2 focus:ring-accent"
+              aria-label="Play video"
+            >
+
+              <img
+                [src]="item.customThumbnail ? item.customThumbnail : (item.type === MediaType.Video ? 'https://img.youtube.com/vi/' + item.youtubeId + '/mqdefault.jpg' : '/assets/images/default-playlist.jpg')"
+                alt="Thumbnail"
+                class="h-full w-full object-cover opacity-80 transition-opacity group-hover:opacity-100"
+              />
+              <div class="absolute inset-0 flex items-center justify-center bg-ink/30">
+                <svg class="h-6 w-6 text-white transition-transform group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </button>
+
+            <div class="flex flex-1 flex-col items-start gap-1">
               <span class="font-serif text-xl leading-none text-white sm:text-2xl">{{ t(item.title) }}</span>
               <span class="text-[13px] leading-[1.5] text-offwhite">{{ t(item.subtitle) }}</span>
             </div>
-            <div class="flex items-center gap-2">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.51204 2.66554C3.39453 2.8686 3.33269 3.09905 3.33276 3.33364V12.6664C3.33269 12.9009 3.33453 13.1314 3.51204 13.3345C3.62955 13.5375 3.79856 13.706 4.00201 13.8228C4.20547 13.9397 4.43615 14.0008 4.67079 14C4.90542 13.9992 5.13569 13.9365 5.33834 13.8183L13.3393 9.15192C13.541 9.03446 13.7083 8.86614 13.8245 8.66378C13.9407 8.46142 14.0018 8.2321 14.0016 7.99876C14.0014 7.76541 13.9399 7.53621 13.8233 7.33405C13.7068 7.13189 13.5392 6.96385 13.3373 6.84674L5.33834 2.18172C5.13569 2.06348 4.90542 2.0008 4.67079 2.00001C4.43615 1.99921 4.20547 2.06033 4.00201 2.17718C3.79856 2.29404 3.62955 2.46249 3.51204 2.66554Z"
-                  stroke="#E5A93B"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-              </svg>
-              <a class="text-xs font-semibold uppercase tracking-[0.03em] text-accent" target="_blank" [href]="item.link">{{ t('media.youtube') }}</a>
-            </div>
+
           </div>
           @if (!last) {
             <div class="h-px w-full bg-line"></div>
@@ -326,5 +309,15 @@
         }
       </div>
     </section>
+
   </ng-container>
+
 </main>
+
+<!-- Injected YouTube Modal -->
+<app-youtube-modal
+  [isOpen]="isModalOpen()"
+  [youtubeId]="activeItem()?.youtubeId"
+  [type]="activeItem()?.type"
+  (closeModal)="closeModal()">
+</app-youtube-modal>

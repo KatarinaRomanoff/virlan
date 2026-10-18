@@ -1,14 +1,18 @@
-import { Component } from '@angular/core';
+import {Component, signal} from '@angular/core';
 import { TranslocoDirective } from '@jsverse/transloco';
-import { ProfileItem, FlagshipItem, EducationItem, Scholarship, MediaItem } from './models/home.models';
+import {ProfileItem, FlagshipItem, EducationItem, Scholarship, MediaItem, MediaType} from './models/home.models';
+import {YoutubeModalComponent} from '../../components/youtube-modal/youtube-modal.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [TranslocoDirective],
+  imports: [TranslocoDirective, YoutubeModalComponent],
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
+  isModalOpen = signal(false);
+  activeItem = signal<MediaItem | null>(null);
+
   readonly profileItems: ProfileItem[] = [
     { label: 'profile.items.instruments.label', value: 'profile.items.instruments.value' },
     { label: 'profile.items.directions.label', value: 'profile.items.directions.value' },
@@ -35,11 +39,23 @@ export class HomeComponent {
     { year: '2024', title: 'achievements.items.scholarship2024.title', description: 'achievements.items.scholarship2024.description' },
   ];
 
-  readonly mediaItems: MediaItem[] = [
-    { title: 'media.items.gaudeAlbum.title', subtitle: 'media.items.gaudeAlbum.subtitle', link: "https://www.youtube.com/playlist?list=OLAK5uy_lI_ZeBjj8DM8YO-xSKe6P7XJ0OxvJcGjI" },
-    { title: 'media.items.cantaCucul.title', subtitle: 'media.items.cantaCucul.subtitle', link: 'https://www.youtube.com/watch?v=4XcdvlnEyv0' },
-    { title: 'media.items.szlempo.title', subtitle: 'media.items.szlempo.subtitle', link: 'https://www.youtube.com/watch?v=xQCoOyMVW6Q' },
-    { title: 'media.items.vosValcea.title', subtitle: 'media.items.vosValcea.subtitle', link: 'https://www.youtube.com/watch?v=EBMQUqg4z3o' },
-    { title: 'media.items.blueGreen.title', subtitle: 'media.items.blueGreen.subtitle', link: 'https://www.youtube.com/watch?v=WG8DRMViq-U' },
-  ];
+  readonly mediaItems = signal<MediaItem[]>([
+    { title: 'media.items.gaudeAlbum.title', subtitle: 'media.items.gaudeAlbum.subtitle', youtubeId: 'OLAK5uy_lI_ZeBjj8DM8YO-xSKe6P7XJ0OxvJcGjI', type: MediaType.Playlist, customThumbnail: 'https://api.builder.io/api/v1/image/assets/TEMP/b7acd7bdabc27ec5c459542feec7b08346fc0f7d' },
+    { title: 'media.items.cantaCucul.title', subtitle: 'media.items.cantaCucul.subtitle', youtubeId: '4XcdvlnEyv0', type: MediaType.Video },
+    { title: 'media.items.szlempo.title', subtitle: 'media.items.szlempo.subtitle', youtubeId: 'xQCoOyMVW6Q', type: MediaType.Video },
+    { title: 'media.items.vosValcea.title', subtitle: 'media.items.vosValcea.subtitle', youtubeId: 'EBMQUqg4z3o', type: MediaType.Video },
+    { title: 'media.items.blueGreen.title', subtitle: 'media.items.blueGreen.subtitle', youtubeId: 'WG8DRMViq-U', type: MediaType.Video },
+  ]);
+
+  openVideo(item: MediaItem): void {
+    this.activeItem.set(item);
+    this.isModalOpen.set(true);
+  }
+
+  closeModal(): void {
+    this.isModalOpen.set(false);
+    this.activeItem.set(null);
+  }
+
+  protected readonly MediaType = MediaType;
 }
