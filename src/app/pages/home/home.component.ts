@@ -27,7 +27,7 @@ export class HomeComponent {
   readonly educationItems: EducationItem[] = [
     { school: 'education.items.wroclaw.school', degree: 'education.items.wroclaw.degree', major: 'education.items.wroclaw.major' },
     { school: 'education.items.bucharest.school', degree: 'education.items.bucharest.degree', major: 'education.items.bucharest.major' },
-    { school: 'education.items.chisinau.school', degree: 'education.items.chisinau.degree', major: 'education.items.chisinau.major' },
+    { school: 'education.items.chisinau.school', degree: '', major: 'education.items.chisinau.major' },
   ];
 
   readonly scholarships: Scholarship[] = [

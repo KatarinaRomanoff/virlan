@@ -36,14 +36,14 @@
     <!-- Artist profile -->
     <section
       id="profile"
-      class="anchor-offset relative isolate overflow-hidden border-y border-line"
+      class="anchor-offset relative isolate overflow-hidden border-y border-white/10"
     >
       <img
         src="https://api.builder.io/api/v1/image/assets/TEMP/bbccc5192fbea66279590b798c06e26704b94479?width=2880"
         alt=""
         class="absolute inset-0 -z-10 h-full w-full object-cover"
       />
-      <div class="flex flex-col gap-10 px-6 py-10 sm:px-10 lg:flex-row lg:gap-16 lg:px-20 lg:py-12">
+      <div class="backdrop-blur-md bg-ink/20 flex flex-col gap-10 px-6 py-10 sm:px-10 lg:flex-row lg:gap-16 lg:px-20 lg:py-12">
         <div class="flex flex-col items-start gap-4 lg:max-w-[405px]">
           <div class="flex items-center gap-2">
             <span class="h-3 w-3 rounded-full bg-accent"></span>
@@ -76,13 +76,13 @@
 
     <!-- Flagship project -->
     <section id="band" class="anchor-offset flex flex-col items-center gap-10 px-6 py-12 sm:px-10 lg:flex-row-reverse lg:gap-16 lg:px-20 lg:py-16">
-      <div class="relative isolate w-full overflow-hidden rounded-[30px] border border-line lg:max-w-[733px]">
+      <div class="relative isolate w-full overflow-hidden rounded-[30px] border border-white/10 lg:max-w-[733px]">
         <img
           src="https://api.builder.io/api/v1/image/assets/TEMP/edbd1a8eaddff2062d75d3c49cb236c77dd1765e?width=1466"
           alt=""
           class="absolute inset-0 -z-10 h-full w-full object-cover"
         />
-        <div class="flex flex-col gap-6 px-6 py-8 sm:px-11 sm:py-10">
+        <div class="backdrop-blur-md bg-ink/20 flex flex-col gap-6 px-6 py-8 sm:px-11 sm:py-10">
           @for (item of flagshipItems; track item.title) {
             <div class="flex flex-col items-start gap-1.5">
               <span class="text-base font-semibold text-white">{{ t(item.title) }}</span>
@@ -136,13 +136,13 @@
         </div>
       </div>
 
-      <div id="achievements" class="anchor-offset relative isolate w-full overflow-hidden rounded-[30px] border border-line lg:max-w-[655px]">
+      <div id="achievements" class="anchor-offset relative isolate w-full overflow-hidden rounded-[30px] border border-white/10 lg:max-w-[655px]">
         <img
           src="https://api.builder.io/api/v1/image/assets/TEMP/cee7dff0c1d63edaea4a3f74a597d4b6864fba4d?width=1310"
           alt=""
           class="absolute inset-0 -z-10 h-full w-full object-cover"
         />
-        <div class="flex flex-col gap-6 px-6 py-8 sm:px-11 sm:py-10">
+        <div class="backdrop-blur-md bg-ink/20 flex flex-col gap-6 px-6 py-8 sm:px-11 sm:py-10">
           <div class="flex flex-col items-start gap-3">
             <div class="flex items-center gap-2">
               <span class="h-3 w-3 rounded-full bg-accent"></span>
@@ -188,16 +188,16 @@
           {{ t('collaboration.title') }}
         </h2>
       </div>
-      <div class="self-stretch inline-flex justify-start items-center gap-6">
-      <div>
+      <div class="self-stretch flex-col-reverse lg:flex-row inline-flex justify-start items-center gap-6">
+      <div class="w-full lg:w-auto">
         <!-- Photo stage -->
         <img
           src="/assets/images/stage-performance-photo.png?width=250"
           [alt]="t('collaboration.title')"
-          class="w-full rounded-2xl"
+          class="w-full h-auto object-cover rounded-2xl"
         />
       </div>
-        <div class="w-[624px] inline-flex flex-col justify-start items-start gap-6">
+        <div class="lg:w-[624px] w-full inline-flex flex-col justify-start items-start gap-6">
           <div class="self-stretch inline-flex flex-col justify-start items-start gap-3">
             <div class="justify-start text-accent text-sm font-semibold uppercase tracking-wide">{{ t('collaboration.collaborations') }}</div>
             <div class="self-stretch inline-flex justify-start items-start gap-2 flex-wrap content-start">

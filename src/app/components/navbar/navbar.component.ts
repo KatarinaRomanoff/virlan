@@ -13,12 +13,12 @@ export class NavbarComponent {
   menuOpen = false;
 
   readonly links: NavbarLink[] = [
-    { key: 'label', href: '#profile', muted: false },
-    { key: 'band', href: '#band', muted: true },
-    { key: 'education', href: '#education', muted: true },
-    { key: 'achievements', href: '#achievements', muted: true },
-    { key: 'colaboration', href: '#collaboration', muted: true },
-    { key: 'media', href: '#media', muted: true },
+    { key: 'label', href: '#profile', active: false },
+    { key: 'band', href: '#band', active: false },
+    { key: 'education', href: '#education', active: false },
+    { key: 'achievements', href: '#achievements', active: false },
+    { key: 'colaboration', href: '#collaboration', active: false },
+    { key: 'media', href: '#media', active: false },
   ];
 
   toggleMenu(): void {
@@ -27,5 +27,11 @@ export class NavbarComponent {
 
   closeMenu(): void {
     this.menuOpen = false;
+  }
+
+  setActive(selectedLink: NavbarLink): void {
+    this.links.forEach(link => link.active = false);
+    selectedLink.active = true;
+    this.closeMenu();
   }
 }

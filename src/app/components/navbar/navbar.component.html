@@ -1,4 +1,4 @@
-<nav class="fixed top-0 z-50 w-full bg-dark/95 backdrop-blur-sm border-b border-line">
+<nav class="fixed top-0 z-50 w-full bg-ink/60 backdrop-blur-sm border-b border-line">
     <div class="flex items-center justify-between px-6 py-4 sm:px-10 lg:px-20" >
       <ng-container *transloco="let t">
       <a href="#" class="text-xl font-bold text-white">
@@ -12,9 +12,9 @@
         class="lg:hidden flex flex-col gap-1.5 p-2"
         aria-label="Toggle menu"
       >
-        <span class="block w-6 h-0.5 bg-white transition-all duration-300" [class.rotate-45]="menuOpen" [class.translate-y-1.5]="menuOpen"></span>
+        <span class="block w-6 h-0.5 bg-white transition-all duration-300" [class.rotate-45]="menuOpen" [class.translate-y-2]="menuOpen"></span>
         <span class="block w-6 h-0.5 bg-white transition-all duration-300" [class.opacity-0]="menuOpen"></span>
-        <span class="block w-6 h-0.5 bg-white transition-all duration-300" [class.-rotate-45]="menuOpen" [class.-translate-y-1.5]="menuOpen"></span>
+        <span class="block w-6 h-0.5 bg-white transition-all duration-300" [class.-rotate-45]="menuOpen" [class.-translate-y-2]="menuOpen"></span>
       </button>
 
       <!-- Desktop menu -->
@@ -25,8 +25,8 @@
             [href]="link.href"
             (click)="closeMenu()"
             class="text-sm font-semibold hover:text-accent transition-colors"
-            [class.text-muted]="link.muted"
-            [class.text-white]="!link.muted"
+            [class.text-accent]="link.active"
+            [class.text-white]="!link.active"
           >
             {{ t('navbar.' + link.key) }}
           </a>
@@ -38,15 +38,15 @@
 
     <!-- Mobile menu -->
     @if (menuOpen) {
-      <div class="lg:hidden px-6 py-4 bg-dark/95 backdrop-blur-sm border-t border-line">
+      <div class="lg:hidden px-6 py-4 bg-ink/60 backdrop-blur-sm border-t border-line">
         <ng-container *transloco="let t">
         @for (link of links; track link.key) {
           <a
             [href]="link.href"
-            (click)="closeMenu()"
+            (click)="setActive(link)"
             class="block py-3 text-sm font-semibold hover:text-accent transition-colors"
-            [class.text-muted]="link.muted"
-            [class.text-white]="!link.muted"
+            [class.text-accent]="link.active"
+            [class.text-white]="!link.active"
           >
             {{ t('navbar.' + link.key) }}
           </a>
