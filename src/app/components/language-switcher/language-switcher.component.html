@@ -2,7 +2,7 @@
   @for (lang of availableLangs; track lang) {
     <button
       (click)="changeLanguage(lang)"
-      [class]="activeLang === lang
+      [class]="activeLang() === lang
         ? 'text-accent font-bold'
         : 'text-white hover:text-accent'"
       class="text-sm font-medium transition-colors cursor-pointer"
