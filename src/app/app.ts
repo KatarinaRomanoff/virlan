@@ -1,5 +1,5 @@
-import { Component, computed, effect, inject } from '@angular/core';
-import { RouterOutlet, ActivatedRoute, Router } from '@angular/router';
+import {Component, computed, DOCUMENT, effect, inject} from '@angular/core';
+import { RouterOutlet, ActivatedRoute } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { TranslocoService } from '@jsverse/transloco';
@@ -15,10 +15,10 @@ import { FooterComponent } from './components/footer/footer.component';
 })
 export class App {
   private readonly route = inject(ActivatedRoute);
-  private readonly router = inject(Router);
   private readonly translocoService = inject(TranslocoService);
   private readonly title = inject(Title);
   private readonly meta = inject(Meta);
+  private readonly document = inject(DOCUMENT);
 
   private readonly queryParams = toSignal(this.route.queryParams);
 
@@ -28,6 +28,8 @@ export class App {
     effect(() => {
       const lang = this.currentLang();
       this.translocoService.setActiveLang(lang);
+
+      this.document.documentElement.lang = lang;
 
       firstValueFrom(this.translocoService.load(lang)).then(() => {
         this.title.setTitle(
@@ -42,14 +44,46 @@ export class App {
               lang,
             ) ?? '',
         });
+
+        // Dynamiczna aktualizacja tagów dla robotów Google
+        this.updateCanonicalTag(lang);
+        this.ensureHreflangTags();
       });
     });
   }
 
-  changeLanguage(lang: string): void {
-    this.router.navigate([], {
-      queryParams: { lang },
-      queryParamsHandling: 'merge',
+  private updateCanonicalTag(lang: string): void {
+    let canonicalLink = this.document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+    if (!canonicalLink) {
+      canonicalLink = this.document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      this.document.head.appendChild(canonicalLink);
+    }
+
+    const canonicalUrl = lang === 'pl'
+      ? 'https://vercel.app'
+      : 'https://vercel.app?lang=en';
+
+    canonicalLink.setAttribute('href', canonicalUrl);
+  }
+
+
+  private ensureHreflangTags(): void {
+    const languages = [
+      { code: 'en', url: 'https://ion-virlan.vercel.app?lang=en' },
+      { code: 'pl', url: 'https://ion-virlan.vercel.app?lang=pl' },
+      { code: 'x-default', url: 'https://ion-virlan.vercel.app' }
+    ];
+
+    languages.forEach(lang => {
+      let link = this.document.querySelector(`link[hreflang="${lang.code}"]`);
+      if (!link) {
+        link = this.document.createElement('link');
+        link.setAttribute('rel', 'alternate');
+        link.setAttribute('hreflang', lang.code);
+        link.setAttribute('href', lang.url);
+        this.document.head.appendChild(link);
+      }
     });
   }
 }
